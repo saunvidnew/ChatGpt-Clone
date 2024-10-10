@@ -13,7 +13,7 @@ from django.utils import timezone # type: ignore
 load_dotenv() # Load enviorment variables
 openai_api_key = os.getenv('open_ai_api_key')
 openai.api_key = openai_api_key
-
+#this is the function to get response from open-ai api 
 def ask_openai(message):
     response = openai.Completion.create(
         model = "gpt-3.5-turbo-instruct",
