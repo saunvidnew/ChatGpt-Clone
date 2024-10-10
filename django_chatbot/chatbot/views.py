@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 import openai
+import os
+from dotenv import load_dotenv
 
 from django.contrib import auth
 from django.contrib.auth.models import User
@@ -8,8 +10,8 @@ from .models import Chat
 
 from django.utils import timezone # type: ignore
 
-
-openai_api_key = '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'
+load_dotenv() # Load enviorment variables
+openai_api_key = os.getenv('open_ai_api_key')
 openai.api_key = openai_api_key
 
 def ask_openai(message):
